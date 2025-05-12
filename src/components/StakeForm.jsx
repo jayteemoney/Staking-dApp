@@ -1,22 +1,25 @@
-import { FaEthereum } from "react-icons/fa";
-
 function StakeForm({ stakeAmount, setStakeAmount, stakeEth }) {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    stakeEth();
+  };
+
   return (
-    <div className="space-y-2">
+    <form onSubmit={handleSubmit} className="space-y-2">
       <input
-        type="number"
+        type="text"
         value={stakeAmount}
         onChange={(e) => setStakeAmount(e.target.value)}
         placeholder="Amount to stake (ETH)"
-        className="w-full p-2 rounded bg-gray-700 text-white"
+        className="w-full p-2 rounded bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-600"
       />
       <button
-        onClick={stakeEth}
-        className="w-full flex items-center justify-center bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded"
+        type="submit"
+        className="w-full bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded"
       >
-        <FaEthereum className="mr-2" /> Stake ETH
+        Stake ETH
       </button>
-    </div>
+    </form>
   );
 }
 
