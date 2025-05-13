@@ -211,7 +211,7 @@ function App() {
   }, );
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white flex flex-col items-center justify-center p-4">
+    <div className="min-h-screen bg-gray-950 text-white flex flex-col items-center justify-center p-4">
       <div className="w-full max-w-md bg-gray-800 rounded-lg shadow-lg p-6">
         <h1 className="text-2xl font-bold text-center mb-6">ETH Staking DApp</h1>
         <WalletConnect
