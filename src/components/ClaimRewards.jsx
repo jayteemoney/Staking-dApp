@@ -1,10 +1,16 @@
-function ClaimRewards({ claimRewards }) {
+// src/components/ClaimRewards.jsx
+function ClaimRewards({ claimRewards, isClaiming }) {
   return (
     <button
       onClick={claimRewards}
-      className="w-full bg-yellow-600 hover:bg-yellow-700 text-white py-2 px-4 rounded"
+      className={`w-full ${
+        isClaiming
+          ? "bg-yellow-400 text-gray-900 cursor-wait"
+          : "bg-yellow-600 hover:bg-yellow-700"
+      } text-white py-2 px-4 rounded`}
+      disabled={isClaiming}
     >
-      Claim Rewards
+      {isClaiming ? "Claiming..." : "Claim Rewards"}
     </button>
   );
 }
