@@ -211,16 +211,16 @@ function App() {
   }, );
 
   return (
-    <div className="min-h-screen bg-gray-950 text-white flex flex-col items-center justify-center p-4">
+    <div className="min-h-screen bg-gray-950 text-white flex flex-col items-center justify-center p-4 text-center">
       <div className="w-full max-w-md bg-gray-800 rounded-lg shadow-lg p-6">
-        <h1 className="text-2xl font-bold text-center mb-6">ETH Staking DApp</h1>
+        <h1 className="text-2xl font-bold text-center mb-6">Stake <i>ETH</i> get <i>FITECHTOKENS</i></h1>
         <WalletConnect
           connectWallet={connectWallet}
           account={account}
           isConnecting={isConnecting}
         />
         {account && (
-          <div className="space-y-4 mt-4">
+          <div className="space-y-4 mt-4 ">
             <p>ETH Balance: {parseFloat(balance).toFixed(4)} ETH</p>
             <p>Staked: {parseFloat(stakedAmount).toFixed(4)} ETH</p>
             <p>Reward: {parseFloat(reward).toFixed(2)} FIT</p>
