@@ -1,4 +1,3 @@
-// src/components/ClaimRewards.jsx
 function ClaimRewards({ claimRewards, isClaiming }) {
   return (
     <button
@@ -14,5 +13,4 @@ function ClaimRewards({ claimRewards, isClaiming }) {
     </button>
   );
 }
-
 export default ClaimRewards;
