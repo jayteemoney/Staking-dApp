@@ -233,7 +233,7 @@ function App() {
             <UnstakeButton unstakeEth={unstakeEth} />
             <ClaimRewards claimRewards={claimRewards} />
             {error && (
-              <p className="text-red-400 text-xs text-center">{error}</p>
+              <p className="text-red-800 text-xs text-center">{error}</p>
             )}
           </div>
         )}
