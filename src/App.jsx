@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { ethers } from "ethers";
-import WalletConnect from "./components/WalletConnect";
+import WalletConnect from "./components/WalletConect";
 import StakeForm from "./components/StakeForm";
 import UnstakeButton from "./components/UnstakeButton";
 import ClaimRewards from "./components/ClaimRewards";
