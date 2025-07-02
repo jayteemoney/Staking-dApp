@@ -7,7 +7,7 @@ import ClaimRewards from "./components/ClaimRewards";
 import FitechTokenABI from "./abis/FitechTokenABI.json";
 import EthStakingABI from "./abis/EthStakingABI.json";
 import { FITTECH_TOKEN_ADDRESS, ETH_STAKING_ADDRESS } from "./config";
-import { stakeEth, unstakeEth, claimRewards } from "./services/stakingService";
+import { stakeEth, unstakeEth, claimRewards } from "./Services/StakingService";
 
 // Centralized error messages for wallet connection
 const WALLET_ERROR_MESSAGES = {
