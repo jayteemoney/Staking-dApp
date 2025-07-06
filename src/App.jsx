@@ -181,7 +181,7 @@ function App() {
                 })
               }
             />
-            {error && <p className="text-red-500 text-xs text-center">{error}</p>}
+            {error && <p className="text-red-300 text-xs text-center">{error}</p>}
           </div>
         )}
       </div>
