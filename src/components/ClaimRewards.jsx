@@ -5,7 +5,7 @@ function ClaimRewards({ claimRewards, isClaiming }) {
       className={`w-full ${
         isClaiming
           ? "bg-yellow-400 text-gray-900 cursor-wait"
-          : "bg-yellow-600 hover:bg-yellow-700"
+          : "bg-yellow-600 hover:bg-yellow-600"
       } text-white py-2 px-4 rounded`}
       disabled={isClaiming}
     >
