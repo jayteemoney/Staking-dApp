@@ -133,10 +133,12 @@ function App() {
         />
         {account && (
           <div className="space-y-4 mt-4">
+          <div className="border p-4 rounded bg-gray-700">
             <p>ETH Balance: {parseFloat(balance).toFixed(4)} ETH</p>
             <p>Staked: {parseFloat(stakedAmount).toFixed(4)} ETH</p>
             <p>Reward: {parseFloat(reward).toFixed(2)} FIT</p>
             <p>FIT Balance: {parseFloat(tokenBalance).toFixed(2)} FIT</p>
+          </div>
             <StakeForm
               stakeAmount={stakeAmount}
               setStakeAmount={setStakeAmount}
