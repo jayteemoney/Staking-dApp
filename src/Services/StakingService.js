@@ -96,10 +96,36 @@ export const claimRewards = async ({
   tokenContract,
 }) => {
   try {
+    const userStake = await stakingContract.stakes(account);
+    if (!userStake.active) {
+      setError("No active stake.");
+      return false;
+    }
+
+    const now = Math.floor(Date.now() / 1000);
+    if (now < Number(userStake.timestamp) + 15) {
+      setError("Lock period not completed.");
+      return false;
+    }
+
+    const reward = await stakingContract.calculateReward(account);
+    console.log("Reward to claim:", reward);
+
+    if (reward === 0n) {
+      setError(ERROR_MESSAGES.NO_REWARDS);
+      return false;
+    }
+
+    const contractTokenBalance = await tokenContract.balanceOf(stakingContract.target);
+    if (contractTokenBalance < reward) {
+      setError("Staking contract has insufficient reward tokens.");
+      return false;
+    }
+
     const tx = await stakingContract.claimReward();
     await tx.wait();
+
     setError("");
-    const reward = await stakingContract.calculateReward(account);
     setReward(ethers.formatUnits(reward, 18));
     const tokenBal = await tokenContract.balanceOf(account);
     setTokenBalance(ethers.formatUnits(tokenBal, 18));
