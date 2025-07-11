@@ -133,7 +133,7 @@ function App() {
         />
         {account && (
           <div className="space-y-4 mt-4">
-          <div className="border p-4 rounded bg-gray-700">
+          <div className="border p-4 rounded-2xl bg-gray-700 space-y-2">
             <p>ETH Balance: {parseFloat(balance).toFixed(4)} ETH</p>
             <p>Staked: {parseFloat(stakedAmount).toFixed(4)} ETH</p>
             <p>Reward: {parseFloat(reward).toFixed(2)} FIT</p>
